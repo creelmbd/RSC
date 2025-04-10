@@ -36,15 +36,17 @@ header {
 }
 
 .container {
-  width: 85%;
+  width: 90%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -53,23 +55,34 @@ header {
 }
 
 .logo img {
-  height: 50px;
+  height: 40px;
   margin-right: 10px;
 }
 
 .logo-text {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: bold;
   color: var(--white);
+}
+
+/* Mobile Menu */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
+  transition: all 0.3s ease;
 }
 
 .nav-links li {
-  margin-left: 2rem;
+  margin-left: 1.5rem;
 }
 
 .nav-links a {
@@ -77,6 +90,7 @@ header {
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
+  font-size: 0.95rem;
 }
 
 .nav-links a:hover {
@@ -95,30 +109,30 @@ header {
 
 .hero-content {
   max-width: 800px;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .hero-logo {
-  width: 180px;
-  margin-bottom: 2rem;
+  width: 150px;
+  margin-bottom: 1.5rem;
 }
 
 .hero h1 {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
 }
 
 .btn {
   display: inline-block;
   background-color: var(--green-primary);
   color: var(--white);
-  padding: 0.8rem 2rem;
+  padding: 0.8rem 1.8rem;
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
@@ -136,16 +150,16 @@ header {
 }
 
 .section {
-  padding: 5rem 0;
+  padding: 4rem 0;
 }
 
 .section-title {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .section-title h2 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin-bottom: 1rem;
   position: relative;
   display: inline-block;
@@ -157,7 +171,7 @@ header {
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
+  width: 70px;
   height: 4px;
   background-color: var(--green-primary);
 }
@@ -169,15 +183,18 @@ header {
 .about-content {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .about-text {
   flex: 1;
+  min-width: 280px;
 }
 
 .about-image {
   flex: 1;
+  min-width: 280px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
@@ -191,25 +208,25 @@ header {
 
 .info-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
 }
 
 .info-card {
   background-color: rgba(0, 0, 0, 0.2);
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 10px;
   transition: transform 0.3s;
   border-left: 4px solid var(--green-primary);
 }
 
 .info-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
 }
 
 .info-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-bottom: 1rem;
   color: var(--green-light);
 }
@@ -220,19 +237,20 @@ header {
 
 .rules-container {
   background-color: rgba(0, 0, 0, 0.2);
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 10px;
 }
 
 .rules-list {
-  list-style-position: inside;
-  margin-left: 1rem;
+  list-style: none; /* 🔥 Removes default bullets */
+  padding-left: 0;   /* Optional: Aligns it nicely */
 }
+
 
 .rules-list li {
   margin-bottom: 0.8rem;
   position: relative;
-  padding-left: 1.5rem;
+  padding-left: 1.2rem;
 }
 
 .rules-list li::before {
@@ -249,8 +267,8 @@ header {
 
 .tee-times {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
 }
 
 .tee-time-card {
@@ -263,7 +281,7 @@ header {
 .tee-time-card h3 {
   color: var(--green-light);
   margin-bottom: 1rem;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 
 .times-list {
@@ -283,10 +301,15 @@ header {
   background-color: var(--dark-bg);
 }
 
+.payouts-table-wrapper {
+  overflow-x: auto;
+  margin-top: 1.5rem;
+}
+
 .payouts-table {
   width: 100%;
+  min-width: 500px;
   border-collapse: collapse;
-  margin-top: 2rem;
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   overflow: hidden;
@@ -294,7 +317,7 @@ header {
 
 .payouts-table th,
 .payouts-table td {
-  padding: 1rem;
+  padding: 0.8rem;
   text-align: left;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -314,19 +337,19 @@ header {
 
 .players-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
 }
 
 .player-card {
   background-color: rgba(0, 0, 0, 0.2);
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 10px;
   text-align: center;
   transition: all 0.3s;
 }
 
-.player-card:hover {
+.player-card:hover, .player-card.hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
@@ -340,25 +363,20 @@ header {
   background-color: var(--green-primary);
   color: var(--white);
   border-radius: 50%;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   font-weight: bold;
 }
 
 footer {
   background-color: var(--dark-gray);
-  padding: 3rem 0;
+  padding: 2rem 0;
   text-align: center;
-}
-
-.footer-logo {
-  width: 100px;
-  margin-bottom: 1.5rem;
 }
 
 .social-links {
   display: flex;
   justify-content: center;
-  margin: 1.5rem 0;
+  margin: 1rem 0;
   list-style: none;
 }
 
@@ -368,7 +386,7 @@ footer {
 
 .social-links a {
   color: var(--white);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   transition: color 0.3s;
 }
 
@@ -381,29 +399,137 @@ footer {
   color: var(--light-gray);
 }
 
-/* Responsive */
+/* Table Responsive Styles */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
+  .payouts-table th {
+    display: none;
+  }
+
+  .payouts-table td {
+    display: block;
+    text-align: right;
+    padding: 0.6rem;
+  }
+
+  .payouts-table td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    color: var(--green-light);
+  }
+
+  .payouts-table td[rowspan] {
+    background-color: rgba(59, 145, 80, 0.1);
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+/* Enhanced Responsive Styles */
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .section-title h2 {
+    font-size: 2rem;
+  }
+
+  .players-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
   }
 
   .nav-links {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 0;
+  }
+
+  .nav-links.active {
+    max-height: 300px;
     margin-top: 1rem;
   }
 
   .nav-links li {
-    margin: 0 0.5rem;
+    margin: 0.5rem 0;
   }
 
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
   }
 
   .about-content {
     flex-direction: column;
   }
 
+  .about-text, .about-image {
+    flex: 100%;
+  }
+
   .section-title h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .info-card {
+    padding: 1.2rem;
+  }
+
+  .players-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  .player-card {
+    padding: 0.8rem;
+  }
+
+  .player-card h3 {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    height: 35px;
+  }
+
+  .logo-text {
+    font-size: 1.1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+
+  .section-title h2 {
+    font-size: 1.6rem;
+  }
+
+  .players-grid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 0.8rem;
+  }
+
+  .player-number {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 0.8rem;
   }
 }

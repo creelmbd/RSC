@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rising Star Classic | Golf Tournament</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -17,7 +18,10 @@
           <img src="./img/RSC.jpg" alt="Rising Star Classic Logo">
           <span class="logo-text">Rising Star Classic</span>
         </div>
-        <ul class="nav-links">
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="navLinks">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#rules">Rules</a></li>
@@ -85,13 +89,20 @@
       </div>
       <div class="rules-container">
         <ul class="rules-list">
-          <li>$50.00 Mandatory Buy-in</li>
-          <li>1 Mulligan per Person for HAWAIIAN themed clothes (2 man only)</li>
-          <li>Triple Bogey Max</li>
-          <li>No Gimmies</li>
-          <li>MUST SUBMIT SCORECARD TO JASON - Completely filled out or you are DQ'd</li>
-          <li>Can move ball 1 club length no closer to hole but CANNOT improve lie (rough, fairway, sand-rough)</li>
-          <li>$50.00 is due to Jason IN CASH BEFORE YOU TEE OFF</li>
+          <li><strong>$50.00 Mandatory Buy-In</strong> — Due in <strong>cash</strong> to Jason <strong>before teeing
+              off</strong>.</li>
+          <li><strong>1 Mulligan per Person</strong> — Awarded for wearing <strong>Hawaiian-themed attire</strong>
+            (<em>2-Man Scramble only</em>).</li>
+          <li><strong>Mulligans are NOT allowed on putts.</strong></li>
+          <li><strong>Triple Bogey Maximum</strong> — Pick up your ball after triple bogey.</li>
+          <li><strong>No Gimmies</strong> — Every shot must be holed out.</li>
+          <li><strong>Mandatory Scorecard Submission</strong> — Fully completed scorecards must be turned in to Jason.
+            <strong>Incomplete scorecards will result in disqualification.</strong></li>
+          <li><strong>One Club Length Relief</strong> — You may move your ball up to <strong>one club length</strong>,
+            no closer to the hole, but <strong>you cannot improve your lie</strong> (e.g., you must stay in rough if
+            you're in rough, sand if you're in sand, etc.).</li>
+          <li><strong>No Club Length Movement on Greens</strong> — Ball must be played as it lies on the putting
+            surface.</li>
         </ul>
       </div>
     </div>
@@ -142,61 +153,67 @@
       <div class="section-title">
         <h2>Tournament Payouts</h2>
       </div>
-      <table class="payouts-table">
-        <thead>
-          <tr>
-            <th>Category</th>
-            <th>Position</th>
-            <th>Prize</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td rowspan="4">2 Man Scramble</td>
-            <td>1st Place</td>
-            <td>$400.00</td>
-          </tr>
-          <tr>
-            <td>2nd Place</td>
-            <td>$300.00</td>
-          </tr>
-          <tr>
-            <td>3rd Place</td>
-            <td>$200.00</td>
-          </tr>
-          <tr>
-            <td>4th Place</td>
-            <td>$100.00</td>
-          </tr>
-          <tr>
-            <td rowspan="2">4 Man Scramble</td>
-            <td>1st Place</td>
-            <td>$160.00</td>
-          </tr>
-          <tr>
-            <td>2nd Place</td>
-            <td>$80.00</td>
-          </tr>
-          <tr>
-            <td rowspan="3">CTP (Closest to Pin)</td>
-            <td>Hole 4</td>
-            <td>$50.00</td>
-          </tr>
-          <tr>
-            <td>Hole 6</td>
-            <td>$50.00</td>
-          </tr>
-          <tr>
-            <td>Hole 9</td>
-            <td>$50.00</td>
-          </tr>
-          <tr>
-            <td>Skins</td>
-            <td>-</td>
-            <td>$360.00</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="payouts-table-wrapper">
+        <table class="payouts-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Position</th>
+              <th>Prize</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="4">2 Man Scramble</td>
+              <td>1st Place</td>
+              <td>$400.00</td>
+            </tr>
+            <tr>
+              <td>2nd Place</td>
+              <td>$300.00</td>
+            </tr>
+            <tr>
+              <td>3rd Place</td>
+              <td>$200.00</td>
+            </tr>
+            <tr>
+              <td>4th Place</td>
+              <td>$100.00</td>
+            </tr>
+            <tr>
+              <td rowspan="2">4 Man Scramble</td>
+              <td>1st Place</td>
+              <td>$160.00</td>
+            </tr>
+            <tr>
+              <td>2nd Place</td>
+              <td>$80.00</td>
+            </tr>
+            <tr>
+              <td rowspan="4">CTP (Closest to Pin)</td>
+              <td>Hole 4</td>
+              <td>$50.00</td>
+            </tr>
+            <tr>
+              <td>Hole 6</td>
+              <td>$50.00</td>
+            </tr>
+            <tr>
+              <td>Hole 9</td>
+              <td>$50.00</td>
+            </tr>
+            <tr>
+              <td>Hole 13</td>
+              <td>$50.00</td>
+            </tr>
+            <tr>
+              <td>Skins</td>
+              <td>-</td>
+              <td>$360.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 
@@ -300,93 +317,93 @@
       </div>
     </div>
 
-  <div class="container">
-    <br><br>
-    <div class="section-title">
-      <h2>Draftees</h2>
+    <div class="container">
+      <br><br>
+      <div class="section-title">
+        <h2>Draftees</h2>
+      </div>
+      <div class="players-grid">
+        <div class="player-card">
+          <span class="player-number">19</span>
+          <h3>Jesse</h3>
+        </div>
+        <div class="player-card">
+          <span class="player-number">20</span>
+          <h3>Creelman</h3>
+        </div>
+        <div class="player-card">
+          <span class="player-number">21</span>
+          <h3>Colton</h3>
+        </div>
+        <div class="player-card">
+          <span class="player-number">22</span>
+          <h3>Tony</h3>
+        </div>
+        <div class="player-card">
+          <span class="player-number">23</span>
+          <h3>Houck</h3>
+        </div>
+        <div class="player-card">
+          <span class="player-number">24</span>
+          <h3>Jim</h3>
+        </div>
+        <div class="player-card">
+          <span class="player-number">25</span>
+          <h3>Ray</h3>
+        </div>
+        <div class="player-card">
+          <span class="player-number">26</span>
+          <h3>Miniard</h3>
+        </div>
+        <div class="player-card">
+          <span class="player-number">27</span>
+          <h3>Warman</h3>
+        </div>
+        <div class="player-card">
+          <span class="player-number">28</span>
+          <h3>Noonan</h3>
+        </div>
+        <div class="player-card">
+          <span class="player-number">29</span>
+          <h3>Brandon</h3>
+        </div>
+        <div class="player-card">
+          <span class="player-number">30</span>
+          <h3>Josh</h3>
+        </div>
+        <div class="player-card">
+          <span class="player-number">31</span>
+          <h3>Ben</h3>
+        </div>
+        <div class="player-card">
+          <span class="player-number">32</span>
+          <h3>Waldroff</h3>
+        </div>
+        <div class="player-card">
+          <span class="player-number">33</span>
+          <h3>Jack</h3>
+        </div>
+        <div class="player-card">
+          <span class="player-number">34</span>
+          <h3>Jeff</h3>
+        </div>
+        <div class="player-card">
+          <span class="player-number">35</span>
+          <h3>Trey</h3>
+        </div>
+        <div class="player-card">
+          <span class="player-number">36</span>
+          <h3>Jason</h3>
+        </div>
+      </div>
     </div>
-    <div class="players-grid">
-      <div class="player-card">
-        <span class="player-number">19</span>
-        <h3>Jesse</h3>
-      </div>
-      <div class="player-card">
-        <span class="player-number">20</span>
-        <h3>Creelman</h3>
-      </div>
-      <div class="player-card">
-        <span class="player-number">21</span>
-        <h3>Colton</h3>
-      </div>
-      <div class="player-card">
-        <span class="player-number">22</span>
-        <h3>Tony</h3>
-      </div>
-      <div class="player-card">
-        <span class="player-number">23</span>
-        <h3>Houck</h3>
-      </div>
-      <div class="player-card">
-        <span class="player-number">24</span>
-        <h3>Jim</h3>
-      </div>
-      <div class="player-card">
-        <span class="player-number">25</span>
-        <h3>Ray</h3>
-      </div>
-      <div class="player-card">
-        <span class="player-number">26</span>
-        <h3>Miniard</h3>
-      </div>
-      <div class="player-card">
-        <span class="player-number">27</span>
-        <h3>Warman</h3>
-      </div>
-      <div class="player-card">
-        <span class="player-number">28</span>
-        <h3>Noonan</h3>
-      </div>
-      <div class="player-card">
-        <span class="player-number">29</span>
-        <h3>Brandon</h3>
-      </div>
-      <div class="player-card">
-        <span class="player-number">30</span>
-        <h3>Josh</h3>
-      </div>
-      <div class="player-card">
-        <span class="player-number">31</span>
-        <h3>Ben</h3>
-      </div>
-      <div class="player-card">
-        <span class="player-number">32</span>
-        <h3>Waldroff</h3>
-      </div>
-      <div class="player-card">
-        <span class="player-number">33</span>
-        <h3>Jack</h3>
-      </div>
-      <div class="player-card">
-        <span class="player-number">34</span>
-        <h3>Jeff</h3>
-      </div>
-      <div class="player-card">
-        <span class="player-number">35</span>
-        <h3>Trey</h3>
-      </div>
-      <div class="player-card">
-        <span class="player-number">36</span>
-        <h3>Jason</h3>
-      </div>
-    </div>
-  </div>
   </section>
 
   <!-- Footer -->
   <footer>
     <div class="container">
       <ul class="social-links">
-        <li><a href="#">Instagram</a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
       </ul>
       <p class="copyright">© 2025 Rising Star Classic. All Rights Reserved.</p>
     </div>
@@ -394,28 +411,67 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
+          // Mobile Menu Toggle
+          const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+          const navLinks = document.getElementById('navLinks');
 
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+          mobileMenuBtn.addEventListener('click', function () {
+            navLinks.classList.toggle('active');
           });
-        });
-      });
 
-      // Header scroll effect
-      const header = document.querySelector('header');
-      window.addEventListener('scroll', function () {
-        if (window.scrollY > 100) {
-          header.classList.add('header-scrolled');
-        } else {
-          header.classList.remove('header-scrolled');
-        }
-      });
-    });
-  </script>
-</body>
+          // Close mobile menu when clicking a link
+          document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function () {
+              navLinks.classList.remove('active');
+            });
+          });
 
-</html>
+          // Smooth scrolling for anchor links
+          document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+              e.preventDefault();
+
+              document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+              });
+            });
+          });
+
+          // Header scroll effect
+          const header = document.querySelector('header');
+          window.addEventListener('scroll', function () {
+            if (window.scrollY > 100) {
+              header.classList.add('header-scrolled');
+            } else {
+              header.classList.remove('header-scrolled');
+            }
+          });
+
+          // Add touch events for mobile devices
+          const playerCards = document.querySelectorAll('.player-card');
+          playerCards.forEach(card => {
+            card.addEventListener('touchstart', function () {
+              this.classList.add('hover');
+            });
+            card.addEventListener('touchend', function () {
+              this.classList.remove('hover');
+            });
+          });
+
+          // Responsive tables
+          const tables = document.querySelectorAll('table');
+          tables.forEach(table => {
+            const tableHeaders = table.querySelectorAll('th');
+            const tableRows = table.querySelectorAll('tbody tr');
+
+            if (window.innerWidth < 768) {
+              tableRows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                cells.forEach((cell, index) => {
+                  if (tableHeaders[index] && !cell.getAttribute('data-label')) {
+                    cell.setAttribute('data-label', tableHeaders[index].textContent);
+                  }
+                });
+              });
+            }
+          });
