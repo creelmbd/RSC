@@ -1,821 +1,421 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rising Star Classic | Golf Tournament</title>
-    <style>
-        :root {
-            --dark-bg: #1a1f2a;
-            --green-primary: #3b9150;
-            --green-light: #4cb366;
-            --green-dark: #2d7a3e;
-            --white: #ffffff;
-            --light-gray: #e0e0e0;
-            --dark-gray: #333333;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-        }
-
-        body {
-            background-color: var(--dark-bg);
-            color: var(--white);
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            z-index: 100;
-            transition: all 0.3s ease;
-        }
-
-        .header-scrolled {
-            background-color: rgba(0, 0, 0, 0.9);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        .container {
-            width: 85%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
-            height: 50px;
-            margin-right: 10px;
-        }
-
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--white);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--green-light);
-        }
-
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./img/RSC.jpg') center/cover no-repeat;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            padding: 2rem;
-        }
-
-        .hero-logo {
-            width: 180px;
-            margin-bottom: 2rem;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--green-primary);
-            color: var(--white);
-            padding: 0.8rem 2rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: var(--green-light);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .section {
-            padding: 5rem 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--green-primary);
-        }
-
-        .about {
-            background-color: var(--dark-gray);
-        }
-
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .about-image {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .info-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .info-card {
-            background-color: rgba(0, 0, 0, 0.2);
-            padding: 2rem;
-            border-radius: 10px;
-            transition: transform 0.3s;
-            border-left: 4px solid var(--green-primary);
-        }
-
-        .info-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .info-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--green-light);
-        }
-
-        .rules {
-            background-color: var(--dark-bg);
-        }
-
-        .rules-container {
-            background-color: rgba(0, 0, 0, 0.2);
-            padding: 2rem;
-            border-radius: 10px;
-        }
-
-        .rules-list {
-            list-style-position: inside;
-            margin-left: 1rem;
-        }
-
-        .rules-list li {
-            margin-bottom: 0.8rem;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .rules-list li::before {
-            content: "•";
-            color: var(--green-primary);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        .schedule {
-            background-color: var(--dark-gray);
-        }
-
-        .tee-times {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .tee-time-card {
-            background-color: rgba(0, 0, 0, 0.2);
-            padding: 1.5rem;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .tee-time-card h3 {
-            color: var(--green-light);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-
-        .times-list {
-            list-style: none;
-        }
-
-        .times-list li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .times-list li:last-child {
-            border-bottom: none;
-        }
-
-        .payouts {
-            background-color: var(--dark-bg);
-        }
-
-        .payouts-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 2rem;
-            background-color: rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .payouts-table th, .payouts-table td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .payouts-table th {
-            background-color: var(--green-dark);
-            color: var(--white);
-        }
-
-        .payouts-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .players {
-            background-color: var(--dark-gray);
-        }
-
-        .players-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .player-card {
-            background-color: rgba(0, 0, 0, 0.2);
-            padding: 1.5rem;
-            border-radius: 10px;
-            text-align: center;
-            transition: all 0.3s;
-        }
-
-        .player-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .player-number {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            line-height: 30px;
-            text-align: center;
-            background-color: var(--green-primary);
-            color: var(--white);
-            border-radius: 50%;
-            margin-bottom: 1rem;
-            font-weight: bold;
-        }
-
-        .cta {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/400') center/cover no-repeat;
-            text-align: center;
-            position: relative;
-        }
-
-        .cta-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        footer {
-            background-color: var(--dark-gray);
-            padding: 3rem 0;
-            text-align: center;
-        }
-
-        .footer-logo {
-            width: 100px;
-            margin-bottom: 1.5rem;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            margin: 1.5rem 0;
-            list-style: none;
-        }
-
-        .social-links li {
-            margin: 0 1rem;
-        }
-
-        .social-links a {
-            color: var(--white);
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: var(--green-light);
-        }
-
-        .copyright {
-            font-size: 0.9rem;
-            color: var(--light-gray);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-            }
-
-            .nav-links {
-                margin-top: 1rem;
-            }
-
-            .nav-links li {
-                margin: 0 0.5rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .about-content {
-                flex-direction: column;
-            }
-
-            .section-title h2 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rising Star Classic | Golf Tournament</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo">
-                    <img src="./img/RSC.jpg" alt="Rising Star Classic Logo">
-                    <span class="logo-text">Rising Star Classic</span>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#rules">Rules</a></li>
-                    <li><a href="#schedule">Schedule</a></li>
-                    <li><a href="#payouts">Payouts</a></li>
-                    <li><a href="#players">Players</a></li>
-                </ul>
-            </nav>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo">
+          <img src="./img/RSC.jpg" alt="Rising Star Classic Logo">
+          <span class="logo-text">Rising Star Classic</span>
         </div>
-    </header>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#rules">Rules</a></li>
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="#payouts">Payouts</a></li>
+          <li><a href="#players">Players</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>2025 RISING STAR CLASSIC</h1>
-            <p>A premier golf tournament at the Links at Rising Star Casino</p>
-            <a href="#about" class="btn">Learn More</a>
-        </div>
-    </section>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>2025 RISING STAR CLASSIC</h1>
+      <p>A premier golf tournament at the Links at Rising Star Casino</p>
+      <a href="#about" class="btn">Learn More</a>
+    </div>
+  </section>
 
-    <!-- About Section -->
-    <section id="about" class="section about">
-        <div class="container">
-            <div class="section-title">
-                <h2>About The Tournament</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p><b>What if I told you...</b></p>
-                    <p>That true greatness isn't measured at Augusta or St. Andrews... but at a riverside casino golf course tucked away in the Midwest.</p>
-                    <br>
-                    <p><b>Welcome to the Rising Star Classic</b> — 36 holes, two grueling competitions, one legendary day. A battle of stamina, questionable judgment, and the kind of raw talent that can only be fueled by gas station breakfast sandwiches and sheer willpower. Championships are not just won here — they are survived.</p>
-                </div>
-                <div class="about-image">
-                    <img src="./img/RSC.jpg" alt="Golf Course">
-                </div>
-            </div>
-            <div class="info-cards">
-                <div class="info-card">
-                    <h3>Event Details</h3>
-                    <p>Date: April 26, 2025</p>
-                    <p>Location: The Links at Rising Star Casino</p>
-                    <p>Format: 2-Man Scramble & 4-Man Scramble</p>
-                    <p>Buy-in: $50.00 per person</p>
-                </div>
-                <div class="info-card">
-                    <h3>Important Notes</h3>
-                    <p>Arrive at the course by 6:30 AM</p>
-                    <p>Hawaiian themed attire encouraged</p>
-                    <p>PACE OF PLAY is CRITICAL with 18 tee times</p>
-                    <p>Please act appropriately around the clubhouse</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Rules Section -->
-    <section id="rules" class="section rules">
-        <div class="container">
-            <div class="section-title">
-                <h2>Tournament Rules</h2>
-            </div>
-            <div class="rules-container">
-                <ul class="rules-list">
-                    <li>$50.00 Mandatory Buy-in</li>
-                    <li>1 Mulligan per Person for HAWAIIAN themed clothes (2 man only)</li>
-                    <li>Triple Bogey Max</li>
-                    <li>No Gimmies</li>
-                    <li>MUST SUBMIT SCORECARD TO JASON - Completely filled out or you are DQ'd</li>
-                    <li>Can move ball 1 club length no closer to hole but CANNOT improve lie (rough, fairway, sand-rough)</li>
-                    <li>$50.00 is due to Jason IN CASH BEFORE YOU TEE OFF</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Schedule Section -->
-    <section id="schedule" class="section schedule">
-        <div class="container">
-            <div class="section-title">
-                <h2>Tee Times</h2>
-            </div>
-            <div class="tee-times">
-                <div class="tee-time-card">
-                    <h3>Morning Tee Times</h3>
-                    <ul class="times-list">
-                        <li>7:30 AM</li>
-                        <li>7:40 AM</li>
-                        <li>7:50 AM</li>
-                        <li>8:00 AM</li>
-                        <li>8:10 AM</li>
-                        <li>8:20 AM</li>
-                        <li>8:30 AM</li>
-                        <li>8:40 AM</li>
-                        <li>8:50 AM</li>
-                    </ul>
-                </div>
-                <div class="tee-time-card">
-                    <h3>Afternoon Tee Times</h3>
-                    <ul class="times-list">
-                        <li>1:30 PM</li>
-                        <li>1:40 PM</li>
-                        <li>1:50 PM</li>
-                        <li>2:00 PM</li>
-                        <li>2:10 PM</li>
-                        <li>2:20 PM</li>
-                        <li>2:30 PM</li>
-                        <li>2:40 PM</li>
-                        <li>2:50 PM</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Payouts Section -->
-    <section id="payouts" class="section payouts">
-        <div class="container">
-            <div class="section-title">
-                <h2>Tournament Payouts</h2>
-            </div>
-            <table class="payouts-table">
-                <thead>
-                    <tr>
-                        <th>Category</th>
-                        <th>Position</th>
-                        <th>Prize</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td rowspan="4">2 Man Scramble</td>
-                        <td>1st Place</td>
-                        <td>$400.00</td>
-                    </tr>
-                    <tr>
-                        <td>2nd Place</td>
-                        <td>$300.00</td>
-                    </tr>
-                    <tr>
-                        <td>3rd Place</td>
-                        <td>$200.00</td>
-                    </tr>
-                    <tr>
-                        <td>4th Place</td>
-                        <td>$100.00</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="2">4 Man Scramble</td>
-                        <td>1st Place</td>
-                        <td>$160.00</td>
-                    </tr>
-                    <tr>
-                        <td>2nd Place</td>
-                        <td>$80.00</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="3">CTP (Closest to Pin)</td>
-                        <td>Hole 4</td>
-                        <td>$50.00</td>
-                    </tr>
-                    <tr>
-                        <td>Hole 6</td>
-                        <td>$50.00</td>
-                    </tr>
-                    <tr>
-                        <td>Hole 9</td>
-                        <td>$50.00</td>
-                    </tr>
-                    <tr>
-                        <td>Skins</td>
-                        <td>-</td>
-                        <td>$360.00</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <!-- Players Section -->
-    <section id="players" class="section players">
-        <div class="container">
-            <div class="section-title">
-                <h2>Draft Order</h2>
-            </div>
-            <div class="players-grid">
-                <div class="player-card">
-                    <span class="player-number">1</span>
-                    <h3>Minges</h3>
-                </div>
-                <div class="player-card">
-                    <span class="player-number">2</span>
-                    <h3>Joe M</h3>
-                </div>
-                <div class="player-card">
-                    <span class="player-number">3</span>
-                    <h3>Joe W</h3>
-                </div>
-                <div class="player-card">
-                    <span class="player-number">4</span>
-                    <h3>Lane</h3>
-                </div>
-                <div class="player-card">
-                    <span class="player-number">5</span>
-                    <h3>Couch</h3>
-                </div>
-                <div class="player-card">
-                    <span class="player-number">6</span>
-                    <h3>Nolan</h3>
-                </div>
-                <div class="player-card">
-                    <span class="player-number">7</span>
-                    <h3>Meister</h3>
-                </div>
-                <div class="player-card">
-                    <span class="player-number">8</span>
-                    <h3>Merkle</h3>
-                </div>
-                <div class="player-card">
-                    <span class="player-number">9</span>
-                    <h3>Randy</h3>
-                </div>
-                <div class="player-card">
-                    <span class="player-number">10</span>
-                    <h3>Curry</h3>
-                </div>
-                <div class="player-card">
-                    <span class="player-number">11</span>
-                    <h3>Han</h3>
-                </div>
-                <div class="player-card">
-                    <span class="player-number">12</span>
-                    <h3>Squeek</h3>
-                </div>
-                <div class="player-card">
-                    <span class="player-number">13</span>
-                    <h3>Butters</h3>
-                </div>
-                <div class="player-card">
-                    <span class="player-number">14</span>
-                    <h3>Foxx</h3>
-                </div>
-                <div class="player-card">
-                    <span class="player-number">15</span>
-                    <h3>Seth</h3>
-                </div>
-                <div class="player-card">
-                    <span class="player-number">16</span>
-                    <h3>Dan</h3>
-                </div>
-                <div class="player-card">
-                    <span class="player-number">17</span>
-                    <h3>Jarrett</h3>
-                </div>
-                <div class="player-card">
-                    <span class="player-number">18</span>
-                    <h3>Chris</h3>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-          <br><br>
-          <div class="section-title">
-              <h2>Draftees</h2>
-          </div>
-          <div class="players-grid">
-              <div class="player-card">
-                  <span class="player-number">1</span>
-                  <h3>Jesse</h3>
-              </div>
-              <div class="player-card">
-                  <span class="player-number">2</span>
-                  <h3>Creelman</h3>
-              </div>
-              <div class="player-card">
-                  <span class="player-number">3</span>
-                  <h3>Colton</h3>
-              </div>
-              <div class="player-card">
-                  <span class="player-number">4</span>
-                  <h3>Tony</h3>
-              </div>
-              <div class="player-card">
-                  <span class="player-number">5</span>
-                  <h3>Houck</h3>
-              </div>
-              <div class="player-card">
-                  <span class="player-number">6</span>
-                  <h3>Jim</h3>
-              </div>
-              <div class="player-card">
-                  <span class="player-number">7</span>
-                  <h3>Ray</h3>
-              </div>
-              <div class="player-card">
-                  <span class="player-number">8</span>
-                  <h3>Miniard</h3>
-              </div>
-              <div class="player-card">
-                  <span class="player-number">9</span>
-                  <h3>Warman</h3>
-              </div>
-              <div class="player-card">
-                  <span class="player-number">10</span>
-                  <h3>Noonan</h3>
-              </div>
-              <div class="player-card">
-                  <span class="player-number">11</span>
-                  <h3>Brandon</h3>
-              </div>
-              <div class="player-card">
-                  <span class="player-number">12</span>
-                  <h3>Josh</h3>
-              </div>
-              <div class="player-card">
-                  <span class="player-number">13</span>
-                  <h3>Ben</h3>
-              </div>
-              <div class="player-card">
-                  <span class="player-number">14</span>
-                  <h3>Waldroff</h3>
-              </div>
-              <div class="player-card">
-                  <span class="player-number">15</span>
-                  <h3>Jack</h3>
-              </div>
-              <div class="player-card">
-                  <span class="player-number">16</span>
-                  <h3>Jeff</h3>
-              </div>
-              <div class="player-card">
-                  <span class="player-number">17</span>
-                  <h3>Trey</h3>
-              </div>
-              <div class="player-card">
-                  <span class="player-number">18</span>
-                  <h3>Jason</h3>
-              </div>
-          </div>
+  <!-- About Section -->
+  <section id="about" class="section about">
+    <div class="container">
+      <div class="section-title">
+        <h2>About The Tournament</h2>
       </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <ul class="social-links">
-                <li><a href="#">Instagram</a></li>
-            </ul>
-            <p class="copyright">© 2025 Rising Star Classic. All Rights Reserved.</p>
+      <div class="about-content">
+        <div class="about-text">
+          <p><b>What if I told you...</b></p>
+          <p>That true greatness isn't measured at Augusta or St. Andrews... but at a riverside casino golf course
+            tucked away in the Midwest.</p>
+          <br>
+          <p><b>Welcome to the Rising Star Classic</b> — 36 holes, two grueling competitions, one legendary day. A
+            battle of stamina, questionable judgment, and the kind of raw talent that can only be fueled by gas station
+            breakfast sandwiches and sheer willpower. Championships are not just won here — they are survived.</p>
         </div>
-    </footer>
+        <div class="about-image">
+          <img src="./img/RSC.jpg" alt="Golf Course">
+        </div>
+      </div>
+      <div class="info-cards">
+        <div class="info-card">
+          <h3>Event Details</h3>
+          <p>Date: April 26, 2025</p>
+          <p>Location: The Links at Rising Star Casino</p>
+          <p>Format: 2-Man Scramble & 4-Man Scramble</p>
+          <p>Buy-in: $50.00 per person</p>
+        </div>
+        <div class="info-card">
+          <h3>Important Notes</h3>
+          <p>Arrive at the course by 6:30 AM</p>
+          <p>Hawaiian themed attire encouraged</p>
+          <p>PACE OF PLAY is CRITICAL with 18 tee times</p>
+          <p>Please act appropriately around the clubhouse</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
+  <!-- Rules Section -->
+  <section id="rules" class="section rules">
+    <div class="container">
+      <div class="section-title">
+        <h2>Tournament Rules</h2>
+      </div>
+      <div class="rules-container">
+        <ul class="rules-list">
+          <li>$50.00 Mandatory Buy-in</li>
+          <li>1 Mulligan per Person for HAWAIIAN themed clothes (2 man only)</li>
+          <li>Triple Bogey Max</li>
+          <li>No Gimmies</li>
+          <li>MUST SUBMIT SCORECARD TO JASON - Completely filled out or you are DQ'd</li>
+          <li>Can move ball 1 club length no closer to hole but CANNOT improve lie (rough, fairway, sand-rough)</li>
+          <li>$50.00 is due to Jason IN CASH BEFORE YOU TEE OFF</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
+  <!-- Schedule Section -->
+  <section id="schedule" class="section schedule">
+    <div class="container">
+      <div class="section-title">
+        <h2>Tee Times</h2>
+      </div>
+      <div class="tee-times">
+        <div class="tee-time-card">
+          <h3>Morning Tee Times</h3>
+          <ul class="times-list">
+            <li>7:30 AM</li>
+            <li>7:40 AM</li>
+            <li>7:50 AM</li>
+            <li>8:00 AM</li>
+            <li>8:10 AM</li>
+            <li>8:20 AM</li>
+            <li>8:30 AM</li>
+            <li>8:40 AM</li>
+            <li>8:50 AM</li>
+          </ul>
+        </div>
+        <div class="tee-time-card">
+          <h3>Afternoon Tee Times</h3>
+          <ul class="times-list">
+            <li>1:30 PM</li>
+            <li>1:40 PM</li>
+            <li>1:50 PM</li>
+            <li>2:00 PM</li>
+            <li>2:10 PM</li>
+            <li>2:20 PM</li>
+            <li>2:30 PM</li>
+            <li>2:40 PM</li>
+            <li>2:50 PM</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            // Header scroll effect
-            const header = document.querySelector('header');
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 100) {
-                    header.classList.add('header-scrolled');
-                } else {
-                    header.classList.remove('header-scrolled');
-                }
-            });
+  <!-- Payouts Section -->
+  <section id="payouts" class="section payouts">
+    <div class="container">
+      <div class="section-title">
+        <h2>Tournament Payouts</h2>
+      </div>
+      <table class="payouts-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Position</th>
+            <th>Prize</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="4">2 Man Scramble</td>
+            <td>1st Place</td>
+            <td>$400.00</td>
+          </tr>
+          <tr>
+            <td>2nd Place</td>
+            <td>$300.00</td>
+          </tr>
+          <tr>
+            <td>3rd Place</td>
+            <td>$200.00</td>
+          </tr>
+          <tr>
+            <td>4th Place</td>
+            <td>$100.00</td>
+          </tr>
+          <tr>
+            <td rowspan="2">4 Man Scramble</td>
+            <td>1st Place</td>
+            <td>$160.00</td>
+          </tr>
+          <tr>
+            <td>2nd Place</td>
+            <td>$80.00</td>
+          </tr>
+          <tr>
+            <td rowspan="3">CTP (Closest to Pin)</td>
+            <td>Hole 4</td>
+            <td>$50.00</td>
+          </tr>
+          <tr>
+            <td>Hole 6</td>
+            <td>$50.00</td>
+          </tr>
+          <tr>
+            <td>Hole 9</td>
+            <td>$50.00</td>
+          </tr>
+          <tr>
+            <td>Skins</td>
+            <td>-</td>
+            <td>$360.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Players Section -->
+  <section id="players" class="section players">
+    <div class="container">
+      <div class="section-title">
+        <h2>Draft Order</h2>
+      </div>
+      <div class="players-grid">
+        <div class="player-card">
+          <span class="player-number">18</span>
+          <h3>Minges</h3>
+          <h5>1</h5>
+        </div>
+        <div class="player-card">
+          <span class="player-number">17</span>
+          <h3>Joe M</h3>
+          <h5>2</h5>
+        </div>
+        <div class="player-card">
+          <span class="player-number">16</span>
+          <h3>Joe W</h3>
+          <h5>3</h5>
+        </div>
+        <div class="player-card">
+          <span class="player-number">15</span>
+          <h3>Lane</h3>
+          <h5>4</h5>
+        </div>
+        <div class="player-card">
+          <span class="player-number">14</span>
+          <h3>Couch</h3>
+          <h5>5</h5>
+        </div>
+        <div class="player-card">
+          <span class="player-number">13</span>
+          <h3>Nolan</h3>
+          <h5>6</h5>
+        </div>
+        <div class="player-card">
+          <span class="player-number">12</span>
+          <h3>Meister</h3>
+          <h5>7</h5>
+        </div>
+        <div class="player-card">
+          <span class="player-number">11</span>
+          <h3>Merkle</h3>
+          <h5>8</h5>
+        </div>
+        <div class="player-card">
+          <span class="player-number">10</span>
+          <h3>Randy</h3>
+          <h5>9</h5>
+        </div>
+        <div class="player-card">
+          <span class="player-number">9</span>
+          <h3>Curry</h3>
+          <h5>10</h5>
+        </div>
+        <div class="player-card">
+          <span class="player-number">8</span>
+          <h3>Han</h3>
+          <h5>11</h5>
+        </div>
+        <div class="player-card">
+          <span class="player-number">7</span>
+          <h3>Squeek</h3>
+          <h5>12</h5>
+        </div>
+        <div class="player-card">
+          <span class="player-number">6</span>
+          <h3>Butters</h3>
+          <h5>13</h5>
+        </div>
+        <div class="player-card">
+          <span class="player-number">5</span>
+          <h3>Foxx</h3>
+          <h5>14</h5>
+        </div>
+        <div class="player-card">
+          <span class="player-number">4</span>
+          <h3>Seth</h3>
+          <h5>15</h5>
+        </div>
+        <div class="player-card">
+          <span class="player-number">3</span>
+          <h3>Dan</h3>
+          <h5>16</h5>
+        </div>
+        <div class="player-card">
+          <span class="player-number">2</span>
+          <h3>Jarrett</h3>
+          <h5>17</h5>
+        </div>
+        <div class="player-card">
+          <span class="player-number">1</span>
+          <h3>Chris</h3>
+          <h5>18</h5>
+        </div>
+      </div>
+    </div>
+
+  <div class="container">
+    <br><br>
+    <div class="section-title">
+      <h2>Draftees</h2>
+    </div>
+    <div class="players-grid">
+      <div class="player-card">
+        <span class="player-number">19</span>
+        <h3>Jesse</h3>
+      </div>
+      <div class="player-card">
+        <span class="player-number">20</span>
+        <h3>Creelman</h3>
+      </div>
+      <div class="player-card">
+        <span class="player-number">21</span>
+        <h3>Colton</h3>
+      </div>
+      <div class="player-card">
+        <span class="player-number">22</span>
+        <h3>Tony</h3>
+      </div>
+      <div class="player-card">
+        <span class="player-number">23</span>
+        <h3>Houck</h3>
+      </div>
+      <div class="player-card">
+        <span class="player-number">24</span>
+        <h3>Jim</h3>
+      </div>
+      <div class="player-card">
+        <span class="player-number">25</span>
+        <h3>Ray</h3>
+      </div>
+      <div class="player-card">
+        <span class="player-number">26</span>
+        <h3>Miniard</h3>
+      </div>
+      <div class="player-card">
+        <span class="player-number">27</span>
+        <h3>Warman</h3>
+      </div>
+      <div class="player-card">
+        <span class="player-number">28</span>
+        <h3>Noonan</h3>
+      </div>
+      <div class="player-card">
+        <span class="player-number">29</span>
+        <h3>Brandon</h3>
+      </div>
+      <div class="player-card">
+        <span class="player-number">30</span>
+        <h3>Josh</h3>
+      </div>
+      <div class="player-card">
+        <span class="player-number">31</span>
+        <h3>Ben</h3>
+      </div>
+      <div class="player-card">
+        <span class="player-number">32</span>
+        <h3>Waldroff</h3>
+      </div>
+      <div class="player-card">
+        <span class="player-number">33</span>
+        <h3>Jack</h3>
+      </div>
+      <div class="player-card">
+        <span class="player-number">34</span>
+        <h3>Jeff</h3>
+      </div>
+      <div class="player-card">
+        <span class="player-number">35</span>
+        <h3>Trey</h3>
+      </div>
+      <div class="player-card">
+        <span class="player-number">36</span>
+        <h3>Jason</h3>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <ul class="social-links">
+        <li><a href="#">Instagram</a></li>
+      </ul>
+      <p class="copyright">© 2025 Rising Star Classic. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
         });
-    </script>
+      });
+
+      // Header scroll effect
+      const header = document.querySelector('header');
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 100) {
+          header.classList.add('header-scrolled');
+        } else {
+          header.classList.remove('header-scrolled');
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>
