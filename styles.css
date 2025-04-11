@@ -448,6 +448,197 @@ footer {
   }
 }
 
+/* Sponsors Section Styles with Circular Logos */
+.sponsors {
+  background-color: var(--dark-bg);
+  padding: 4rem 0;
+}
+
+.sponsors-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.sponsor-card {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sponsor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Circular sponsor image container */
+.sponsor-image-circle {
+  height: 200px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: white;
+  padding: 10px;
+}
+
+.sponsor-image-circle img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+.sponsor-name {
+  color: var(--white);
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+/* Responsive adjustments for sponsors section */
+@media (max-width: 768px) {
+  .sponsor-card {
+    width: 220px;
+    padding: 1.2rem;
+  }
+
+  .sponsor-image-circle {
+    height: 180px;
+    width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sponsor-card {
+    width: 100%;
+    max-width: 200px;
+    padding: 1rem;
+  }
+
+  .sponsor-image-circle {
+    height: 160px;
+    width: 160px;
+  }
+
+  .sponsor-name {
+    font-size: 1.1rem;
+  }
+}
+
+.sponsors-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.sponsor-card {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sponsor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.sponsor-image {
+  height: 100px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.sponsor-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.sponsor-name {
+  color: var(--white);
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.sponsor-cta {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sponsor-cta p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+/* Responsive adjustments for sponsors section */
+@media (max-width: 768px) {
+  .sponsors-grid {
+    gap: 1.5rem;
+  }
+
+  .sponsor-card {
+    width: 220px;
+    padding: 1.2rem;
+  }
+
+  .sponsor-image {
+    height: 90px;
+    width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sponsors-grid {
+    gap: 1rem;
+  }
+
+  .sponsor-card {
+    width: 100%;
+    max-width: 200px;
+    padding: 1rem;
+  }
+
+  .sponsor-image {
+    height: 80px;
+    width: 160px;
+  }
+
+  .sponsor-name {
+    font-size: 1.1rem;
+  }
+}
 /* Enhanced Responsive Styles */
 @media (max-width: 992px) {
   .hero h1 {
