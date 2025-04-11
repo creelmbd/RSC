@@ -402,14 +402,27 @@ footer {
 
 /* Table Responsive Styles */
 @media (max-width: 768px) {
-  .payouts-table th {
-    display: none;
+  .payouts-table {
+    min-width: auto; /* Remove the min-width constraint */
+  }
+
+  .payouts-table thead {
+    display: none; /* Hide the table header completely */
+  }
+
+  .payouts-table,
+  .payouts-table tbody,
+  .payouts-table tr {
+    display: block;
+    width: 100%;
   }
 
   .payouts-table td {
     display: block;
     text-align: right;
     padding: 0.6rem;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .payouts-table td:before {
@@ -419,10 +432,19 @@ footer {
     color: var(--green-light);
   }
 
+  /* Special handling for cells with rowspan */
   .payouts-table td[rowspan] {
-    background-color: rgba(59, 145, 80, 0.1);
+    background-color: rgba(59, 145, 80, 0.2);
     text-align: center;
     font-weight: bold;
+    padding: 1rem 0.6rem;
+    border-top: 2px solid var(--green-dark);
+    border-bottom: 2px solid var(--green-dark);
+  }
+
+  /* Add space between rows for better readability */
+  .payouts-table tr:not(:last-child) {
+    margin-bottom: 0.5rem;
   }
 }
 
