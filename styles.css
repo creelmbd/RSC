@@ -1065,9 +1065,9 @@ footer {
   font-weight: bold;
 }
 
-.par-score {
+/*.par-score {
   /* Default styling */
-}
+/*} */
 
 .bogey-score {
   background-color: rgba(244, 67, 54, 0.1);
@@ -1733,4 +1733,162 @@ footer {
   line-height: 30px;
   text-align: center;
   border-radius: 50%;
+}
+
+/* Refined Player Bio Styles with Better Text Spacing */
+.player-card {
+  position: relative;
+  overflow: visible;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.player-card:hover {
+  z-index: 100;
+}
+
+.player-bio {
+  position: absolute;
+  top: -20px;
+  left: 110%;
+  width: 300px;
+  background-color: #1a5336;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none;
+  border: 2px solid #ffc107;
+  text-align: left;
+}
+
+.player-card:hover .player-bio {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.player-bio h4 {
+  margin-top: 0;
+  font-size: 18px;
+  border-bottom: 2px solid #ffc107;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  text-align: left;
+}
+
+.player-bio-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  float: right;
+  margin-left: 10px;
+  border: 3px solid #ffc107;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+.player-bio p {
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 1.4;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  text-align: left;
+}
+
+/* Make the labels align left with minimal gap */
+.player-bio p strong {
+  display: inline-block;
+  margin-right: 5px; /* Small gap after the label */
+}
+
+.bio-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding: 10px;
+  border-top: 1px solid rgba(255,255,255,0.4);
+  background-color: rgba(0,0,0,0.15);
+  border-radius: 5px;
+}
+
+.bio-stats div {
+  text-align: center;
+}
+
+.bio-stats strong {
+  display: block;
+  font-size: 16px;
+  color: #ffc107;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.bio-stats span {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* Handle bio cards that would overflow the right edge */
+.players-grid .player-card:nth-child(3n) .player-bio,
+.players-grid .player-card:nth-child(3n-1) .player-bio {
+  left: auto;
+  right: 110%;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .player-card.touch-hover .player-bio {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .player-bio {
+    left: 50%;
+    top: 110%;
+    right: auto;
+    transform: translateX(-50%);
+    width: 280px;
+  }
+
+  /* Reset the right-side cards positioning on mobile */
+  .players-grid .player-card:nth-child(3n) .player-bio,
+  .players-grid .player-card:nth-child(3n-1) .player-bio {
+    left: 50%;
+    right: auto;
+  }
+}
+
+/* Indicator to show there's more content */
+.player-card::after {
+  content: "👤";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 12px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  background-color: #ffc107;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-card:hover::after {
+  opacity: 0;
+}
+
+.player-gif {
+  width: 100%; /* or a fixed width like 200px */
+  margin-top: 10px;
+  border-radius: 8px;
 }
