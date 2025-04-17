@@ -10,7 +10,7 @@
   padding: 1rem;
   border-radius: 10px;
   text-align: center;
-  transition: all 0.3s;
+  transition: all 0.5s;
   position: relative;
   overflow: visible;
   cursor: pointer;
@@ -51,7 +51,7 @@
   z-index: 205;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
   pointer-events: none;
   border: 2px solid #ffc107;
   text-align: left;
@@ -132,7 +132,7 @@
   right: 5px;
   font-size: 12px;
   opacity: 0.7;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease;
   background-color: #ffc107;
   width: 20px;
   height: 20px;
@@ -199,7 +199,7 @@
   border-radius: 10px;
   padding: 1.5rem;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   width: 200px;
   display: flex;
   flex-direction: column;
