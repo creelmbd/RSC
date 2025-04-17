@@ -1,0 +1,96 @@
+/* ===== BETTING ODDS SECTION ===== */
+.odds-disclaimer {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 0.8rem;
+  background-color: rgba(59, 145, 80, 0.1);
+  border-left: 4px solid var(--green-primary);
+  border-radius: 5px;
+}
+
+.odds-disclaimer p {
+  font-size: 1.1rem;
+  color: var(--light-gray);
+}
+
+.odds-disclaimer i {
+  color: var(--green-light);
+  margin-right: 0.5rem;
+}
+
+.odds-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.odds-table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.odds-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.odds-table th,
+.odds-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(59, 145, 80, 0.2);
+}
+
+.odds-table th {
+  background-color: var(--green-dark);
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+}
+
+.odds-table tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.odds-table tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.odds-table tr:hover {
+  background-color: rgba(59, 145, 80, 0.2);
+  transition: all 0.2s ease;
+}
+
+.odds-table td:nth-child(1) {
+  font-weight: bold;
+}
+
+.odds-table td:nth-child(2) {
+  font-weight: bold;
+  color: var(--green-light);
+  width: 120px;
+}
+
+.betting-disclaimer {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  border-left: 4px solid var(--green-dark);
+}
+
+.betting-disclaimer p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+.betting-explainer {
+  padding: 1.2rem;
+}

@@ -1,0 +1,19 @@
+/* Main CSS file to import all other CSS files */
+
+/* Base styles and variables */
+@import url('base.css');
+
+/* Layout components */
+@import url('header-footer.css');
+@import url('hero-about.css');
+
+/* Section-specific styles */
+@import url('rules-schedule.css');
+@import url('payouts-pairings.css');
+@import url('betting-odds.css');
+@import url('players-sponsors.css');
+@import url('past-scores.css');
+@import url('scorecard.css');
+
+/* Responsive styles - should be imported last */
+@import url('responsive.css');

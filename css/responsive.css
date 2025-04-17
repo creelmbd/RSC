@@ -1,0 +1,424 @@
+/* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .section-title h2 {
+    font-size: 2rem;
+  }
+
+  .players-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .pairings-table th,
+  .pairings-table td,
+  .odds-table th,
+  .odds-table td {
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .pairings-table th,
+  .odds-table th {
+    font-size: 1.2rem;
+  }
+
+  .pairings-table td:first-child {
+    font-size: 1.2rem;
+  }
+
+  /* Golf Scorecard Mobile Responsiveness */
+  .hole-info, .scorecard {
+    font-size: 0.85rem;
+  }
+
+  .scorecard td, .scorecard th,
+  .hole-info td, .hole-info th {
+    padding: 0.3rem 0.2rem;
+  }
+
+  /* Course Information Tables */
+  .course-info-table th,
+  .course-info-table td {
+    padding: 0.6rem;
+    font-size: 1rem;
+  }
+
+  .hole-info-table th,
+  .hole-info-table td {
+    padding: 0.5rem 0.3rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 0;
+  }
+
+  .nav-links.active {
+    max-height: 300px;
+    margin-top: 1rem;
+  }
+
+  .nav-links li {
+    margin: 0.5rem 0;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .about-content {
+    flex-direction: column;
+  }
+
+  .about-text, .about-image {
+    flex: 100%;
+  }
+
+  .section-title h2 {
+    font-size: 1.8rem;
+  }
+
+  .info-card {
+    padding: 1.2rem;
+  }
+
+  .players-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  .player-card {
+    padding: 0.8rem;
+  }
+
+  .player-card h3 {
+    font-size: 0.9rem;
+  }
+
+  /* Table Responsive Styles */
+  .payouts-table,
+  .pairings-table,
+  .odds-table {
+    min-width: auto;
+  }
+
+  .payouts-table thead,
+  .pairings-table thead,
+  .odds-table thead {
+    display: none;
+  }
+
+  .payouts-table,
+  .payouts-table tbody,
+  .payouts-table tr,
+  .pairings-table,
+  .pairings-table tbody,
+  .pairings-table tr,
+  .odds-table,
+  .odds-table tbody,
+  .odds-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .payouts-table td,
+  .pairings-table td,
+  .odds-table td {
+    display: block;
+    text-align: right;
+    padding: 0.8rem;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .payouts-table td:before,
+  .pairings-table td:before,
+  .odds-table td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    color: var(--green-light);
+  }
+
+  /* Special handling for payouts cells with rowspan */
+  .payouts-table td[rowspan] {
+    background-color: rgba(59, 145, 80, 0.2);
+    text-align: center;
+    font-weight: bold;
+    padding: 1rem 0.6rem;
+    border-top: 2px solid var(--green-dark);
+    border-bottom: 2px solid var(--green-dark);
+  }
+
+  .payouts-table tr:not(:last-child),
+  .pairings-table tr,
+  .odds-table tr {
+    margin-bottom: 1rem;
+    border-bottom: 3px solid var(--green-dark);
+  }
+
+  .pairings-table tr:hover,
+  .odds-table tr:hover {
+    transform: none;
+  }
+
+  .pairings-table td:first-child {
+    font-size: 1.15rem;
+    background-color: rgba(59, 145, 80, 0.1);
+    text-align: right;
+  }
+
+  /* Sponsor responsive styles */
+  .sponsors-grid {
+    gap: 1.5rem;
+  }
+
+  .sponsor-card {
+    width: 220px;
+    padding: 1.2rem;
+  }
+
+  .sponsor-image-circle {
+    height: 180px;
+    width: 180px;
+  }
+
+  .betting-explainer {
+    padding: 1.2rem;
+  }
+
+  /* 4-Man Pairings Table Styles for mobile */
+  .pairings-table .team-column {
+    text-align: right; /* Keep consistent with other tables on mobile */
+  }
+
+  .pairings-table .team-column::before {
+    text-align: left; /* Keep the label aligned left on mobile */
+  }
+
+  /* Past scores table mobile adjustments */
+  .scores-table th,
+  .scores-table td {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .scores-legend {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ctp-winners ul {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .scores-table thead {
+    display: none;
+  }
+
+  .scores-table,
+  .scores-table tbody,
+  .scores-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .scores-table td {
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    padding: 0.6rem;
+    position: relative;
+    border-bottom: 1px solid rgba(59, 145, 80, 0.1);
+  }
+
+  .scores-table td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    color: var(--green-light);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+  }
+
+  .scores-table tr {
+    margin-bottom: 1rem;
+    border-bottom: 3px solid var(--green-dark);
+  }
+
+  /* Golf scorecard responsiveness */
+  .course-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hole-info, .scorecard {
+    font-size: 0.8rem;
+  }
+
+  /* Keep the scorecard scrollable on mobile devices */
+  .scorecard-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* We don't want to break the scorecard into cards on mobile
+     Keep it as a table and let users scroll horizontally */
+  .scorecard thead {
+    display: table-header-group;
+  }
+
+  .scorecard tbody {
+    display: table-row-group;
+  }
+
+  .scorecard tr {
+    display: table-row;
+  }
+
+  .scorecard th,
+  .scorecard td {
+    display: table-cell;
+  }
+
+  /* Tournament rules responsive styles */
+  .tournament-rules h3 {
+    font-size: 1.15rem;
+  }
+
+  /* Player Bio mobile adjustments */
+  .player-card.touch-hover .player-bio {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .player-bio {
+    left: 50%;
+    top: 110%;
+    right: auto;
+    transform: translateX(-50%);
+    width: 280px;
+  }
+
+  /* Reset the right-side cards positioning on mobile */
+  .players-grid .player-card:nth-child(3n) .player-bio,
+  .players-grid .player-card:nth-child(3n-1) .player-bio {
+    left: 50%;
+    right: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    height: 35px;
+  }
+
+  .logo-text {
+    font-size: 1.1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+
+  .section-title h2 {
+    font-size: 1.6rem;
+  }
+
+  .players-grid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 0.8rem;
+  }
+
+  .player-number {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 0.8rem;
+  }
+
+  .sponsors-grid {
+    gap: 1rem;
+  }
+
+  .sponsor-card {
+    width: 100%;
+    max-width: 200px;
+    padding: 1rem;
+  }
+
+  .sponsor-image-circle {
+    height: 160px;
+    width: 160px;
+  }
+
+  .sponsor-name {
+    font-size: 1.1rem;
+  }
+
+  .odds-disclaimer p {
+    font-size: 0.95rem;
+  }
+
+  .betting-explainer h3 {
+    font-size: 1.2rem;
+  }
+
+  .betting-explainer p,
+  .betting-disclaimer p {
+    font-size: 0.9rem;
+  }
+
+  /* Tournament rules responsive styles */
+  .tournament-rules h3 {
+    font-size: 1.1rem;
+  }
+
+  /* Golf scorecard responsiveness */
+  .hole-info, .scorecard {
+    font-size: 0.75rem;
+  }
+
+  .scorecard td, .scorecard th {
+    padding: 0.25rem 0.15rem;
+  }
+
+  .course-info {
+    font-size: 0.85rem;
+  }
+
+  /* Course information tables */
+  .course-info-table th,
+  .course-info-table td {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .hole-info-table th,
+  .hole-info-table td {
+    padding: 0.4rem 0.2rem;
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,213 @@
+/* Course Information and Scorecard Container */
+.scorecard-container {
+  background-color: var(--dark-bg);
+  color: var(--white);
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 100%;
+  overflow-x: auto;
+  margin-bottom: 2rem;
+}
+
+/* Course Info Header - Compact Design */
+.course-info {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 0;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(59, 145, 80, 0.3);
+  padding-bottom: 0.5rem;
+}
+
+.course-info div {
+  padding: 0.3rem 0.5rem;
+  font-weight: bold;
+}
+
+.course-info div:nth-child(odd) {
+  color: var(--green-light);
+}
+
+.course-info div:nth-child(even) {
+  text-align: right;
+}
+
+/* Hole Information Table */
+.hole-info {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.hole-info th,
+.hole-info td {
+  padding: 0.3rem 0.2rem;
+  text-align: center;
+  white-space: nowrap;
+  border: 1px solid var(--cell-border);
+}
+
+.hole-info th {
+  background-color: var(--green-dark);
+  color: var(--white);
+  font-weight: bold;
+}
+
+.hole-info td:first-child {
+  background-color: rgba(59, 145, 80, 0.1);
+  font-weight: bold;
+  color: var(--green-light);
+}
+
+/* Compact Scorecard Table */
+.scorecard {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.scorecard th {
+  background-color: var(--green-dark);
+  color: var(--white);
+  padding: 0.4rem 0.3rem;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid var(--green-dark);
+  white-space: nowrap;
+}
+
+.scorecard td {
+  padding: 0.4rem 0.3rem;
+  text-align: center;
+  border: 1px solid var(--cell-border);
+}
+
+/* Team Column */
+.scorecard .team-column {
+  text-align: left;
+  background-color: rgba(59, 145, 80, 0.1);
+  font-weight: bold;
+  padding-left: 0.5rem;
+}
+
+/* Place Column with Trophy */
+.scorecard .trophy {
+  color: var(--gold);
+  margin-right: 0.1rem;
+}
+
+.scorecard .money {
+  color: #00C853;
+  margin-left: 0.2rem;
+}
+
+/* Row Highlighting */
+.scorecard .first-place {
+  border-left: 4px solid var(--gold);
+}
+
+/* Score Coloring */
+.scorecard .birdie {
+  color: var(--birdie-green);
+  font-weight: bold;
+}
+
+.scorecard .eagle {
+  color: var(--eagle-gold);
+  font-weight: bold;
+}
+
+.scorecard .bogey {
+  color: var(--bogey-red);
+}
+
+.scorecard .double-bogey {
+  color: var(--double-bogey-red);
+}
+
+/* Alternating Row Colors */
+.scorecard tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.scorecard tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Hover Effects */
+.scorecard tr:hover {
+  background-color: rgba(59, 145, 80, 0.2);
+}
+
+/* Course Information */
+.course-info-wrapper {
+  margin: 2rem 0;
+  overflow-x: auto;
+}
+
+.course-info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+}
+
+.course-info-table th {
+  background-color: var(--green-dark);
+  color: var(--white);
+  text-align: center;
+  padding: 0.8rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.course-info-table td {
+  text-align: center;
+  padding: 0.8rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-top: 1px solid rgba(59, 145, 80, 0.2);
+}
+
+.hole-info-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.hole-info-table th,
+.hole-info-table td {
+  text-align: center;
+  padding: 0.6rem 0.4rem;
+  border: 1px solid rgba(59, 145, 80, 0.2);
+  font-size: 0.9rem;
+}
+
+.hole-info-table th {
+  background-color: var(--green-dark);
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.hole-info-table td:first-child {
+  background-color: rgba(59, 145, 80, 0.1);
+  font-weight: bold;
+  color: var(--green-light);
+}
+
+.hole-info-table tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.hole-info-table tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,223 @@
+/* Past Scores Section Styles */
+.past-scores {
+  background-color: var(--dark-bg);
+}
+
+.scores-disclaimer {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 0.8rem;
+  background-color: rgba(59, 145, 80, 0.1);
+  border-left: 4px solid var(--green-primary);
+  border-radius: 5px;
+}
+
+.scores-disclaimer p {
+  font-size: 1.1rem;
+  color: var(--light-gray);
+}
+
+.scores-disclaimer i {
+  color: var(--green-light);
+  margin-right: 0.5rem;
+}
+
+.scores-table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.scores-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.scores-table th,
+.scores-table td {
+  padding: 0.8rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(59, 145, 80, 0.2);
+  border-right: 1px solid rgba(59, 145, 80, 0.1);
+}
+
+.scores-table th {
+  background-color: var(--green-dark);
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  position: sticky;
+  top: 0;
+}
+
+.scores-table tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.scores-table tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.scores-table tr:hover {
+  background-color: rgba(59, 145, 80, 0.2);
+  transition: all 0.2s ease;
+}
+
+.scores-table td:nth-child(1),
+.scores-table td:nth-child(2) {
+  font-weight: bold;
+  text-align: left;
+}
+
+.scores-table td:nth-child(3),
+.scores-table td:nth-child(4) {
+  font-weight: bold;
+}
+
+/* Score coloring for different results */
+.birdie-score {
+  background-color: rgba(139, 195, 74, 0.3);
+  color: #8BC34A;
+  font-weight: bold;
+}
+
+.eagle-score {
+  background-color: rgba(255, 193, 7, 0.3);
+  color: #FFC107;
+  font-weight: bold;
+}
+
+/*.par-score {
+  /* Default styling */
+/*} */
+
+.bogey-score {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: #ffb3b3;
+}
+
+.double-bogey-score {
+  background-color: rgba(244, 67, 54, 0.3);
+  color: #ff8080;
+}
+
+.tie-win {
+  background-color: rgba(121, 134, 203, 0.3); /* Light purple/blue with opacity */
+  color: #7986cb; /* Solid color for text */
+  font-weight: bold;
+}
+
+/* Trophy and prize indicators */
+.gold-trophy {
+  color: #FFD700;
+  margin-right: 5px;
+}
+
+.silver-trophy {
+  color: #C0C0C0;
+  margin-right: 5px;
+}
+
+.bronze-trophy {
+  color: #CD7F32;
+  margin-right: 5px;
+}
+
+.prize-indicator {
+  color: #00C853;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.first-place {
+  border-left: 4px solid #FFD700;
+}
+
+.second-place {
+  border-left: 4px solid #C0C0C0;
+}
+
+.bronze-place {
+  border-left: 4px solid #CD7F32;
+}
+
+.fourth-place {
+  border-left: 4px solid #00C853;
+}
+
+/* Score legend */
+.score-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend-item span:first-child {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+}
+/* CTP Winners section */
+.ctp-winners {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.ctp-winners h3 {
+  color: var(--green-light);
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.ctp-winners ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.ctp-winners li {
+  background-color: rgba(59, 145, 80, 0.1);
+  padding: 0.8rem 1.2rem;
+  border-radius: 5px;
+  border-left: 3px solid var(--green-primary);
+  flex: 0 1 calc(25% - 1rem);
+  min-width: 180px;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 992px) {
+  .ctp-winners li {
+    flex: 0 1 calc(50% - 1rem); /* Two items per row on medium screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .ctp-winners li {
+    flex: 0 1 100%; /* Single column on small screens */
+  }
+}

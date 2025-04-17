@@ -1,0 +1,78 @@
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <ul class="social-links">
+      <li><a href="https://www.instagram.com/rising_star_classic/"><i class="fab fa-instagram"></i></a></li>
+    </ul>
+    <p class="copyright">© 2025 Rising Star Classic. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    mobileMenuBtn.addEventListener('click', function () {
+      navLinks.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', function () {
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Header scroll effect
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 100) {
+        header.classList.add('header-scrolled');
+      } else {
+        header.classList.remove('header-scrolled');
+      }
+    });
+
+    // Add touch events for mobile devices
+    const playerCards = document.querySelectorAll('.player-card');
+    playerCards.forEach(card => {
+      card.addEventListener('touchstart', function () {
+        this.classList.add('hover');
+      });
+      card.addEventListener('touchend', function () {
+        this.classList.remove('hover');
+      });
+    });
+
+    // Responsive tables
+    const tables = document.querySelectorAll('table');
+    tables.forEach(table => {
+      const tableHeaders = table.querySelectorAll('th');
+      const tableRows = table.querySelectorAll('tbody tr');
+
+      if (window.innerWidth < 768) {
+        tableRows.forEach(row => {
+          const cells = row.querySelectorAll('td');
+          cells.forEach((cell, index) => {
+            if (tableHeaders[index] && !cell.getAttribute('data-label')) {
+              cell.setAttribute('data-label', tableHeaders[index].textContent);
+            }
+          });
+        });
+      }
+    });
+  })
+</script>

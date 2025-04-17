@@ -1,0 +1,130 @@
+/* ===== PAYOUTS SECTION ===== */
+.payouts-table-wrapper {
+  overflow-x: auto;
+  margin-top: 1.5rem;
+}
+
+.payouts-table {
+  width: 100%;
+  min-width: 500px;
+  border-collapse: collapse;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.payouts-table th,
+.payouts-table td {
+  padding: 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.payouts-table th {
+  background-color: var(--green-dark);
+  color: var(--white);
+}
+
+.payouts-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ===== PAIRINGS SECTION ===== */
+.pairings-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.pairings-table-wrapper {
+  overflow-x: auto;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  max-width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+}
+
+.pairings-table {
+  width: 100%;
+  min-width: 800px;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(59, 145, 80, 0.3);
+}
+
+.pairings-table th,
+.pairings-table td {
+  padding: 1.2rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(59, 145, 80, 0.2);
+  font-size: 1.15rem;
+}
+
+.pairings-table th {
+  background-color: var(--green-dark);
+  color: var(--white);
+  font-size: 1.3rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1.5rem 1.2rem;
+}
+
+.pairings-table tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.pairings-table tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.pairings-table tr:last-child td {
+  border-bottom: none;
+}
+
+.pairings-table tr:hover {
+  background-color: rgba(59, 145, 80, 0.2);
+  transform: scale(1.01);
+  transition: all 0.2s ease;
+}
+
+.pairings-table td:first-child {
+  font-weight: bold;
+  color: var(--green-light);
+  text-align: center;
+  width: 15%;
+  font-size: 1.3rem;
+}
+
+.pairings-table td:not(:first-child) {
+  width: 42.5%;
+}
+
+.pairings-table td span.rank {
+  color: var(--green-light);
+  font-weight: 600;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0; transform: translateY(20px);}
+  100% {opacity: 1; transform: translateY(0);}
+}
+
+/* 4-Man Pairings Table Styles */
+.pairings-table .time-column {
+  color: var(--green-light);
+}
+
+.pairings-table .team-column {
+  text-align: center;
+}
+
+.pairings-table th {
+  text-align: center;
+}
