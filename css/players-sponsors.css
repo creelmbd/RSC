@@ -253,3 +253,105 @@
   margin-bottom: 1rem;
   font-size: 1.1rem;
 }
+
+/* Improved player bio positioning */
+.player-bio {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  max-width: 90vw; /* Prevent overflow beyond viewport width */
+  max-height: 80vh; /* Prevent overflow beyond viewport height */
+  background-color: #1a5336;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  z-index: 205;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none;
+  border: 2px solid #ffc107;
+  text-align: left;
+  overflow-y: auto; /* Allow scrolling if content is too tall */
+}
+
+/* Create a semi-transparent overlay for the background */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none;
+}
+
+/* Show overlay when a player card is active */
+.player-card.active .player-bio,
+.player-card:hover .player-bio,
+.player-card.active + .overlay,
+.player-card:hover ~ .overlay {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Add close button functionality */
+.bio-close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 24px;
+  color: #ffc107;
+  cursor: pointer;
+  z-index: 210;
+}
+
+/* Make sure player card hover state remains even when cursor moves to bio */
+.player-card.active,
+.player-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .player-bio {
+    width: 90%;
+    max-width: 320px;
+  }
+}
+
+/* Add a "View Bio" button for better accessibility */
+.view-bio-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffc107;
+  color: #1a5336;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.player-card:hover .view-bio-btn {
+  opacity: 1;
+}
+
+/* Adjust player card to make room for the button */
+.player-card {
+  padding-bottom: 35px;
+}
